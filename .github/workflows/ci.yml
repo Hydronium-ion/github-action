@@ -8,25 +8,17 @@ jobs:
   build:
     name: CI
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-
-    strategy:
-      matrix:
-        node-version: [12.x]
 
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-
       - name: yarn install
-        run: yarn install
+        uses: borales/actions-yarn@v2.3.0
+        with: 
+          cmd: install
 
       - name: yarn build
-        run: yarn build
+        uses: borales/actions-yarn@v2.3.0
+        with: 
+          cmd: build

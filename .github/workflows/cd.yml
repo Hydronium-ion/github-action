@@ -1,4 +1,4 @@
-name: Node.js CD
+name: CD
 
 on:
   push:
@@ -8,13 +8,6 @@ jobs:
   build:
     name: CD
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-
-    strategy:
-      matrix:
-        node-version: [12.x]
 
     steps:
       - name: Checkout

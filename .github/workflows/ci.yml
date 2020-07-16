@@ -16,7 +16,7 @@ jobs:
       - name: yarn install
         uses: borales/actions-yarn@v2.3.0
         with: 
-          cmd: install
+          cmd: install --frozen-lockfile
 
       - name: yarn build
         uses: borales/actions-yarn@v2.3.0
